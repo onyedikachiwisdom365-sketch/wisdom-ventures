@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wisdom Ventures</title>
+<style>
+body{font-family:sans-serif;background:#f5f5f5;padding:12px;margin:0}
+.card{background:#fff;padding:16px;border-radius:12px;margin:12px 0;box-shadow:0 2px 6px #0001}
+h1{color:#0a7a20;text-align:center}
+button{background:#0a7a20;color:#fff;border:0;padding:14px;border-radius:8px;width:100%;font-weight:bold;font-size:16px}
+</style>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+<h1>Wisdom Ventures</h1>
+<div class="card">
+<h3>🛒 Cart</h3>
+<p>Rice 50kg - ₦85,000</p>
+<p><b>Total: ₦85,000</b></p>
+<p style="color:green">Paystack 2% = ₦86,700</p>
+<button onclick="pay()">Pay with Paystack</button>
+</div>
+<div class="card"><h3>📦 Orders</h3><p>No orders yet.</p></div>
+<script>
+function pay(){
+PaystackPop.setup({key:'pk_test_xxx',email:'customer@wisdom.com',amount:8670000,currency:'NGN',callback:function(r){alert('Success '+r.reference)}}).openIframe();
+}
+</script>
+</body>
+</html>
